@@ -38,10 +38,7 @@ public class UserDAO {
         }
 
 return "Invalid user credentials";
-
-}
-
-
+    }
 
 public static Connection createConnection(){
     String url = "jdbc:postgresql://localhost:8080/FinalTaskDatabase";

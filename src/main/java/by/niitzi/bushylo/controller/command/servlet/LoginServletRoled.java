@@ -65,11 +65,12 @@ public class LoginServletRoled extends HttpServlet {
         }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {//получаем данные сервера
         System.out.println("Hello World");
         //request.getRequestDispatcher("WEB-INF/jsp/hello.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/loginPage.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsp/homePage.jsp").forward(request, response);
     }
 }
 
