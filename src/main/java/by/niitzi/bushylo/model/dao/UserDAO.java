@@ -18,6 +18,8 @@ public class UserDAO {
         {
             Connection con = createConnection();
             Statement statement = con.createStatement();
+            //Prepared Statement
+            //statement.executeQuery("select id, password, role from users where login="+login);
             ResultSet resultSet = statement.executeQuery("select login,password,role from users");
 //В БД АДМИНОВ ОТДЕЛЬНО, ЮЗЕРОВ ОТДЕЛЬНО ИЛИ В ОДНОЙ таблице?...
             while(resultSet.next())

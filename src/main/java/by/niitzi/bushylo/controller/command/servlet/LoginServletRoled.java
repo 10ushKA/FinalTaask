@@ -13,7 +13,7 @@ import java.io.IOException;
 
 
 
-@WebServlet(urlPatterns = "/login")
+@WebServlet(name = "LoginServletRoled", urlPatterns = "/login")
 public class LoginServletRoled extends HttpServlet {
 
         public LoginServletRoled() {
@@ -35,16 +35,21 @@ public class LoginServletRoled extends HttpServlet {
 
                 if (userValidate.equals("Admin_Role")) {
 
+                    System.out.println("Admin's Home");
+
                     HttpSession session = request.getSession(); //Creating a session
-                    session.setAttribute("Admin", login); //setting session attribute
+                    session.setAttribute("admin", login); //setting session attribute
                     request.setAttribute("login", login);
 
                     request.getRequestDispatcher("WEB-INF/jsp/admin.jsp").forward(request, response);
 
 
                 } else if (userValidate.equals("User_Role")) {
+
+                    System.out.println("User's Home");
+
                     HttpSession session = request.getSession();
-                    session.setAttribute("User", login);
+                    session.setAttribute("user", login);
                     request.setAttribute("login", login);
 
                     request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
@@ -70,6 +75,7 @@ public class LoginServletRoled extends HttpServlet {
         //request.getRequestDispatcher("WEB-INF/jsp/hello.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/loginPage.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/jsp/admin.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/homePage.jsp").forward(request, response);
     }
 }
