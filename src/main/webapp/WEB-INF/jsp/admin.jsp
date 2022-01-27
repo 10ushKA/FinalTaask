@@ -9,18 +9,13 @@
 <html>
 <head>
     <title>Admin Page</title>
-    <% //In case, if Admin session is not set, redirect to Login page
-        if((request.getSession(false).getAttribute("admin")== null) )
-        {
-    %>
-    <jsp:forward page="loginPage.jsp"> </jsp:forward>
-    <%} %>
 </head>
 <body>
 <h2>Admin's Home</h2>
 
-Welcome <%=request.getAttribute("login") %>
-
-<div style="text-align: right"><a href="<%=request.getContextPath()%> /LogoutServlet">Logout</a></div>
+Welcome <%=request.getSession().getAttribute("admin") %>
+<form action="/logout", method="get" >
+<div style="text-align: right"><a href="<%=request.getContextPath()%>/logout">Logout</a></div>
+</form>
 </body>
 </html>

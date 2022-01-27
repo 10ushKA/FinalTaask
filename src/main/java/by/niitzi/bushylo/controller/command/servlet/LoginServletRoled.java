@@ -40,6 +40,7 @@ public class LoginServletRoled extends HttpServlet {
                     HttpSession session = request.getSession(); //Creating a session
                     session.setAttribute("admin", login); //setting session attribute
                     request.setAttribute("login", login);
+                    response.sendRedirect("/admin/home");
 
                     request.getRequestDispatcher("WEB-INF/jsp/admin.jsp").forward(request, response);
 
@@ -52,8 +53,8 @@ public class LoginServletRoled extends HttpServlet {
                     session.setAttribute("user", login);
                     request.setAttribute("login", login);
 
-                    request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
-
+                    //request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
+                    response.sendRedirect("/user/home");
 
                 } else {
                     System.out.println("Error message = " + userValidate);
@@ -71,7 +72,7 @@ public class LoginServletRoled extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {//получаем данные сервера
-        System.out.println("Hello World");
+        System.out.println("Get Login");
         //request.getRequestDispatcher("WEB-INF/jsp/hello.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/loginPage.jsp").forward(request, response);
         request.getRequestDispatcher("WEB-INF/jsp/user.jsp").forward(request, response);
