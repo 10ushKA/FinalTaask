@@ -1,6 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style><%@include file="/WEB-INF/css/main.css"%></style>
+</head>
 <body>
-<h1>Here is gonna be homePage or login/sign in  page soon, haven't decided yet, but now just: </h1>
-<h2>(add /login to the path above (http://localhost:8081))</h2>
+
+<jsp:forward page="/home?command=to_home"/>
 </body>
 </html>
+
