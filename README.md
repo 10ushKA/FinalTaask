@@ -16,4 +16,4 @@ ADMIN'S PART
 - deleting the client (by username)
 
 CLIENT'S PART
-- fixing -
+- -fixing -
