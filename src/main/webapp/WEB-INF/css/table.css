@@ -1,0 +1,23 @@
+table {
+    font-family: sans-serif;
+    font-size: 14px;
+    background: white;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: left;
+}
+th {
+    font-family: sans-serif;
+    color: #948a7d;
+    border-bottom: 2px solid #948a7d;
+    padding: 10px 8px;
+}
+td {
+    color: #948a7d;
+    padding: 9px 8px;
+    transition: .3s linear;
+}
+tr:hover td {
+    color: #948a7d;
+}

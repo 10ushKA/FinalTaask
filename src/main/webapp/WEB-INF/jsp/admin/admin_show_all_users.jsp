@@ -11,28 +11,39 @@
 
 <html>
 <head>
-    <title>All Users</title>
+    <title>All Clients</title>
+    <style><%@include file="/WEB-INF/css/table.css"%></style>
+    <style><%@include file="/WEB-INF/css/custom_buttons.css"%></style>
 </head>
 <body>
-<h1>All Users</h1>
-<table>
+<a href="admin?command=to_admin_home" class="previous round">&#8249;</a>
+<table class="table table-bordered">
     <thead>
-        <tr>
-            <th>User Id</th>
-            <th>User Login</th>
-            <th>User Role</th>
-        </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
     </thead>
     <tbody>
-        <c:forEach var="user" items="${users}">
-            <tr>
-                <td>${user.id}</td>
-                <td>${user.username}</td>
-                <td>${user.role}</td>
-                <td>${user.status}</td>
-            </tr>
-        </c:forEach>
+    <!--   for (Todo todo: todos) {  -->
+    <c:forEach var="user" items="${users}">
+
+        <tr>
+            <td>
+                <c:out value="${user.id}" />
+            </td>
+            <td>
+                <c:out value="${user.username}" />
+            </td>
+            <td>
+                <c:out value="${user.status}" />
+            </td>
+        </tr>
+    </c:forEach>
+    <!-- } -->
     </tbody>
+
 </table>
 </body>
 </html>

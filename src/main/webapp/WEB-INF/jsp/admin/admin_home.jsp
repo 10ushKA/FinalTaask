@@ -12,14 +12,19 @@
 <html>
 <head>
     <title>Admin Home</title>
+    <style><%@include file="/WEB-INF/css/form.css"%></style>
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <a href="admin?command=to-all-clients"><button>Show all clients</button></a>
-    <a href="admin?command=to-create-client"><button>Create Client</button></a>
-    <a href="admin?command=to-update-client"><button>Update client</button></a>
-    <a href="admin?command=to-delete-client"><button>Delete client</button></a>
+<div class="centered">
+    <a href="admin?command=to-all-clients"><button class="form_button">Show Clients</button></a>
     <br><br>
-    <a href="/home?command=to_login"><button>LOGOUT</button></a>
+    <a href="admin?command=to-create-client"><button class="form_button">Create Client</button></a>
+    <br><br>
+    <a href="admin?command=to-update-client"><button class="form_button">Update Client</button></a>
+    <br><br>
+    <a href="admin?command=to-delete-client"><button class="form_button">Delete Client</button></a>
+    <br><br><br>
+    <a href="/home?command=to_login"><button class="form_button">LOGOUT</button></a>
+</div>
 </body>
 </html>

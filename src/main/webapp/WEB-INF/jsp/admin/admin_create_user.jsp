@@ -10,8 +10,10 @@
 <head>
     <title>Create User</title>
     <style><%@include file="/WEB-INF/css/form.css"%></style>
+    <style><%@include file="/WEB-INF/css/custom_buttons.css"%></style>
 </head>
 <body>
+<a href="admin?command=to_admin_home" class="previous round" style="margin-right: 40px;">&#8249;</a>
 <form method="post" action="admin?command=create-client">
 
 
@@ -42,7 +44,7 @@
 
     <div class = "form_group">
         <input class = "form_input" type="number" id="age" name="age" placeholder="">
-        <label class="form_label">Height</label>
+        <label class="form_label">Age</label>
     </div>
 
     <div class = "form_group">

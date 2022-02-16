@@ -112,6 +112,7 @@ public class AdminDAOImpl implements AdminDAO {
             sql+=" status = ?";
             params.add(user.getStatus().ordinal()+1);
         }
+
         sql+=" where id=?";
 
         try(Connection connection = ConnectionPool.CONNECTION_POOL.getConnection();

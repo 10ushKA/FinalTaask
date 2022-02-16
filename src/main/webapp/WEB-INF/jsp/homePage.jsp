@@ -11,7 +11,7 @@
     <a href="" class="logo">MY DIGITAL WARDROBE</a>
     <nav>
         <ul class="topmenu">
-            <li><a href="" class="submenu-link">MENU</a>
+            <li><a href="">&#9776;</a>
                 <ul class="submenu">
                     <li><a href="">WHAT'S NEW</a></li>
                     <li><a href="">MY WARDROBE</a></li>

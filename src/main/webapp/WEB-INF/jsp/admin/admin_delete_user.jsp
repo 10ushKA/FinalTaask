@@ -9,12 +9,14 @@
 <html>
 <head>
     <title>Delete User</title>
+    <style><%@include file="/WEB-INF/css/form.css"%></style>
+    <style><%@include file="/WEB-INF/css/custom_buttons.css"%></style>
 </head>
 <body>
-<h1>Delete User</h1>
+<a href="admin?command=to_admin_home" class="previous round" style="margin-right: 40px;">&#8249;</a>
     <form method="post" action="admin?command=delete-client">
-        <input type="text" id="username" name="username">
-        <input type="submit">
+        <input type="text" id="username" name="username" placeholder="User Name To Delete" style="border-radius: 5px;">
+        <button type="submit" class="form_button">DELETE</button>
     </form>
 </body>
 </html>

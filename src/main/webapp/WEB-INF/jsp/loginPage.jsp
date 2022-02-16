@@ -21,7 +21,7 @@
 
     <div class = "form_group">
         <input class = "form_input" name="username" id="username" placeholder="">
-        <label class="form_label">user Name</label>
+        <label class="form_label">User Name</label>
     </div>
 
     <div class = "form_group">
