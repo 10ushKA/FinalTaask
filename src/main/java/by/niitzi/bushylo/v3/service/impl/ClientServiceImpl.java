@@ -4,6 +4,7 @@ package by.niitzi.bushylo.v3.service.impl;
 import by.niitzi.bushylo.v3.dao.ClientDAO;
 import by.niitzi.bushylo.v3.dao.impl.ClientDAOImpl;
 import by.niitzi.bushylo.v3.entity.Client;
+import by.niitzi.bushylo.v3.exception.DAOException;
 import by.niitzi.bushylo.v3.exception.ServiceException;
 import by.niitzi.bushylo.v3.service.ClientService;
 
@@ -33,6 +34,14 @@ public class ClientServiceImpl implements ClientService {
             throw new ServiceException("Client DAO provides exception in service : " + e.getMessage());
         }
     }
+
+    @Override
+    public Optional<Client> findClientToLogin(String username) throws ServiceException {
+        try{
+            return clientDao.findClientToLogin(username);
+        }catch (Exception e){//here should be DAOException, but ide underline it as an error
+            throw new ServiceException("Client DAO provides exception in service : " + e.getMessage());
+        }}
 
     @Override
     public Client createClient(Client client) throws ServiceException {

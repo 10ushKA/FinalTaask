@@ -16,6 +16,9 @@ import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.Map;
 
+import by.niitzi.bushylo.v3.exception.DAOException;
+
+
 @WebServlet(urlPatterns = {"/home", "/admin", "/client" })
 public class AppController extends HttpServlet {
     @Override
@@ -58,7 +61,7 @@ public class AppController extends HttpServlet {
         }
     }
 
-    private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, UnsupportedEncodingException, ServiceException, by.niitzi.bushylo.v3.exception.ServiceException {
+    private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, UnsupportedEncodingException, ServiceException, by.niitzi.bushylo.v3.exception.ServiceException, DAOException {
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
         String command = req.getParameter("command");
@@ -71,7 +74,7 @@ public class AppController extends HttpServlet {
         if (commandResult.getResponseType().equals(CommandResult.ResponseType.FORWARD)) {
             req.getRequestDispatcher(commandResult.getPage()).forward(req, resp);
         } else {
-            resp.sendRedirect(commandResult.getPage());
+            resp.sendRedirect(commandResult.getPage());//ПРОПИСАТЬ КУДА ПЕРЕЙДЕТ НА КОНКРЕТНУЮ СТР, ЕСЛИ НЕ НАЙДЕТ В ИФЕ
         }
     }
 }

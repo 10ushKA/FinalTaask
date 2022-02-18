@@ -17,8 +17,11 @@ public class Client extends User{
     private String lastName;
     private Parameters params;
 
-    public Client() {
+    public Client(int id, String username, String password, Status status, Role role) {
+        super(id, username, password, status, role);
     }
+
+    public Client(){}
 
     public Client(String username, String password, Status status, Role role, String firstName, String lastName, Parameters params) {
         super(username, password, status, role);
@@ -45,6 +48,23 @@ public class Client extends User{
     public int getUserId(){
         return super.getId();
     }
+
+    public String getUserUsername(){
+        return super.getUsername();
+    }
+
+    public String getUserPassword(){
+        return super.getPassword();
+    }
+
+    public Status getUserStatus(){
+        return super.getStatus();
+    }
+
+    public Role getUserRole(){
+        return super.getRole();
+    }
+
 
 
 

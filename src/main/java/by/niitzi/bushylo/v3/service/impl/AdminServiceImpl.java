@@ -3,9 +3,10 @@ package by.niitzi.bushylo.v3.service.impl;
 import by.niitzi.bushylo.v3.dao.AdminDAO;
 import by.niitzi.bushylo.v3.dao.impl.AdminDAOImpl;
 import by.niitzi.bushylo.v3.entity.User;
+import by.niitzi.bushylo.v3.exception.DAOException;
 import by.niitzi.bushylo.v3.service.AdminService;
 
-import javax.xml.rpc.ServiceException;
+import by.niitzi.bushylo.v3.exception.ServiceException;
 import java.util.Optional;
 
 public class AdminServiceImpl implements AdminService {

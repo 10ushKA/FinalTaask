@@ -14,11 +14,7 @@
 </head>
 <body>
 <a href="admin?command=to_admin_home" class="previous round">&#8249;</a>
-    <h1>Update Client</h1>
 <form method="post" action="admin?command=update-client">
-
-
-
 
     <div class="container col-md-5">
         <div class="card">
@@ -50,7 +46,7 @@
         <label>Age</label> <input type="number" name="age" id="age" class="form-control" name="role">
     </fieldset>
 
-    <button type="submit" style="background-color: #948a7d">Save</button>
+    <button type="submit" class="form_button">Save</button>
     </div>
         </div>
     </div>

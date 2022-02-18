@@ -9,14 +9,25 @@
 <html>
 <head>
     <title>Delete User</title>
-    <style><%@include file="/WEB-INF/css/form.css"%></style>
     <style><%@include file="/WEB-INF/css/custom_buttons.css"%></style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 <body>
 <a href="admin?command=to_admin_home" class="previous round" style="margin-right: 40px;">&#8249;</a>
     <form method="post" action="admin?command=delete-client">
-        <input type="text" id="username" name="username" placeholder="User Name To Delete" style="border-radius: 5px;">
-        <button type="submit" class="form_button">DELETE</button>
+
+        <div class="container col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <fieldset class="form-group">
+                        <label>User Name To Delete:</label> <input type="text" name="username" id="username" class="form-control" name="login" required="required">
+                    </fieldset>
+
+                    <button type="submit" class="form_button">DELETE</button>
+                </div></div></div>
+
+
     </form>
 </body>
 </html>

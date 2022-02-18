@@ -9,6 +9,8 @@ import java.util.Optional;
 public interface ClientDAO {
     Optional<Client> findClient(String userName);
 
+    Optional<Client> findClientToLogin(String username);
+
     Client createClient(Client client) throws DAOException;
 
     List<Client> findAllClients();

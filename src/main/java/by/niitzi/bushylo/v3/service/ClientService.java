@@ -8,6 +8,7 @@ import java.util.Optional;
 
 public interface ClientService {
     Optional<Client> findClient(String userName) throws ServiceException;
+    Optional<Client> findClientToLogin(String username) throws ServiceException;
 
     Client createClient(Client client) throws ServiceException;
 

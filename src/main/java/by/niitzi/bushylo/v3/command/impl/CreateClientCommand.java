@@ -7,14 +7,14 @@ import by.niitzi.bushylo.v3.service.ClientService;
 import by.niitzi.bushylo.v3.service.impl.ClientServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.xml.rpc.ServiceException;
+import by.niitzi.bushylo.v3.exception.ServiceException;
 
 public class CreateClientCommand implements Command {
 
     private ClientService clientService = ClientServiceImpl.getInstance();
 
     @Override
-    public CommandResult execute(HttpServletRequest servletRequest) throws ServiceException, by.niitzi.bushylo.v3.exception.ServiceException {
+    public CommandResult execute(HttpServletRequest servletRequest) throws ServiceException {
         String username = servletRequest.getParameter("username");
         String password = servletRequest.getParameter("password");
         String first_name = servletRequest.getParameter("first_name");

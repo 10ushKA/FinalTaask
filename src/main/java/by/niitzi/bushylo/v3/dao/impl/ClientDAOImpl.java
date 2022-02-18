@@ -16,6 +16,7 @@ public class ClientDAOImpl implements ClientDAO {
 
     private static final String FIND_ALL= "select a.id as id, a.first_name as first_name, a.last_name as last_name, b.id as user_id, b.username as username, b.password as password, b.status as status, b.role as role, c.id as params_id, c.weight as weight, c.height as height, c.age as age from client as a join \"user\" as b on a.user_id=b.id join client_params as c on a.id = c.client_id";
     private static final String FIND_CLIENT = FIND_ALL + " where b.username=?";
+    private static final String FIND_CLIENT_TOLOGIN = "select a.id as id, a.username as username, a.password as password, a.status as status, 1 as role from \"user\" as a where a.role = 1 and a.username=?";
     private static final String CREATE_PARAMS = "insert into client_params(weight,height, age, client_id) values(?,?,?,?)";
     private static final String CREATE_CLIENT = "insert into client(user_id, first_name, last_name) values(?,?,?)";
     private static final String DELETE_CLIENT = "delete from client where id=?";
@@ -47,7 +48,34 @@ public class ClientDAOImpl implements ClientDAO {
         }catch (SQLException e){
             System.out.println(e);
         }
-        return Optional.ofNullable(client);
+        return Optional.ofNullable(client); //"Invalid user credentials";
+    }
+
+    @Override
+    public Optional<Client> findClientToLogin(String username) {
+        Client client = null;
+        try(Connection connection = ConnectionPool.CONNECTION_POOL.getConnection();
+            PreparedStatement statement = connection.prepareStatement(FIND_CLIENT_TOLOGIN)){
+            statement.setString(1, username);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                client = parseUserClient(resultSet);
+            }
+        }catch (SQLException e){
+            client = null;
+            System.out.println(e);
+        }
+        return Optional.ofNullable(client);}
+
+    private Client parseUserClient(ResultSet rs) throws SQLException {
+        int id = rs.getInt("id");
+        String username = rs.getString("username");
+        String password = rs.getString("password");
+        int status = rs.getInt("status");
+        int role = rs.getInt("role");
+        Role userRole = parseRole(role);
+        Status userStatus = parseStatus(status);
+        return new Client(id, username, password, userStatus, userRole);
     }
 
     private Client parseClient(ResultSet rs) throws SQLException {
