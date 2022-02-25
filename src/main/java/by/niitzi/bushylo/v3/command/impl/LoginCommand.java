@@ -26,7 +26,7 @@ public class LoginCommand implements Command {
         String userName = servletRequest.getParameter("username");
         String password = servletRequest.getParameter("password");
 
-        Optional<Client> client = clientService.findClientToLogin(userName);
+        Optional<User> client = clientService.findClientToLogin(userName);
         if(client.isPresent() && client.get().getPassword().equals(password)){
             servletRequest.getSession().setAttribute("client", client.get());
             servletRequest.getSession().setAttribute("role", Role.CLIENT);

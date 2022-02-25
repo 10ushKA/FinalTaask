@@ -52,22 +52,22 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public Optional<Client> findClientToLogin(String username) {
-        Client client = null;
+    public Optional<User> findClientToLogin(String username) {
+        User user = null;
         try(Connection connection = ConnectionPool.CONNECTION_POOL.getConnection();
             PreparedStatement statement = connection.prepareStatement(FIND_CLIENT_TOLOGIN)){
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
             if(resultSet.next()) {
-                client = parseUserClient(resultSet);
+                user = parseUserClient(resultSet);
             }
         }catch (SQLException e){
-            client = null;
+            user = null;
             System.out.println(e);
         }
-        return Optional.ofNullable(client);}
+        return Optional.ofNullable(user);}
 
-    private Client parseUserClient(ResultSet rs) throws SQLException {
+    private User parseUserClient(ResultSet rs) throws SQLException {
         int id = rs.getInt("id");
         String username = rs.getString("username");
         String password = rs.getString("password");
@@ -75,11 +75,11 @@ public class ClientDAOImpl implements ClientDAO {
         int role = rs.getInt("role");
         Role userRole = parseRole(role);
         Status userStatus = parseStatus(status);
-        return new Client(id, username, password, userStatus, userRole);
+        return new User(id, username, password, userStatus, userRole);
     }
 
     private Client parseClient(ResultSet rs) throws SQLException {
-        int user_id = rs.getInt("user_id");
+        int user_id = rs.getInt("id");
         String username = rs.getString("username");
         String password = rs.getString("password");
         int status = rs.getInt("status");
