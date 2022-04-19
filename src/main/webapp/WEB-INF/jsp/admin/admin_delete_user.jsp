@@ -21,7 +21,7 @@
             <div class="card">
                 <div class="card-body">
                     <fieldset class="form-group">
-                        <label>User Name To Delete:</label> <input type="text" name="username" id="username" class="form-control" name="login" required="required">
+                        <label>User Name To Delete:</label> <input type="text" name="username" id="username" class="form-control" required="required">
                     </fieldset>
 
                     <button type="submit" class="form_button">DELETE</button>

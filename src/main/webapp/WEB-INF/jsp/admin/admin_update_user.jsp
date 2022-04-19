@@ -20,30 +20,30 @@
         <div class="card">
             <div class="card-body">
     <fieldset class="form-group">
-        <label>User Name for update:</label> <input type="text" name="username" id="username" class="form-control" name="login" required="required">
+        <label>User Name for update:</label> <input type="text" name="username" id="username" class="form-control"  required="required">
     </fieldset>
     <fieldset class="form-group">
-        <label>Password:</label> <input type="password" name="password" id="password" class="form-control" name="password">
+        <label>Password:</label> <input type="password" name="password" id="password" class="form-control" >
     </fieldset>
                 <br><br>
                 <fieldset class="form-group">
-                    <label>FirstName</label> <input type="text" name="first_name" id="first_name" class="form-control" name="password">
+                    <label>FirstName</label> <input type="text" name="first_name" id="first_name" class="form-control">
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label>LastName</label> <input type="text" name="last_name" id="last_name" class="form-control" name="password">
+                    <label>LastName</label> <input type="text" name="last_name" id="last_name" class="form-control">
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label>Weight</label> <input type="number" name="weight" id="weight" class="form-control" name="password">
+                    <label>Weight</label> <input type="number" name="weight" id="weight" class="form-control">
                 </fieldset>
 
                 <fieldset class="form-group">
-                    <label>Height</label> <input type="number" name="height" id="height" class="form-control" name="password">
+                    <label>Height</label> <input type="number" name="height" id="height" class="form-control">
                 </fieldset>
 
     <fieldset class="form-group">
-        <label>Age</label> <input type="number" name="age" id="age" class="form-control" name="role">
+        <label>Age</label> <input type="number" name="age" id="age" class="form-control">
     </fieldset>
 
     <button type="submit" class="form_button">Save</button>

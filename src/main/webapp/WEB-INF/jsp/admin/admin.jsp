@@ -14,7 +14,7 @@
 <h2>Admin's Home</h2>
 
 Welcome <%=request.getSession().getAttribute("admin") %>
-<form action="/logout", method="get" >
+<form action="/logout" method="get" >
 <div style="text-align: right"><a href="<%=request.getContextPath()%>/logout">Logout</a></div>
 </form>
 <h3>Create Item</h3>

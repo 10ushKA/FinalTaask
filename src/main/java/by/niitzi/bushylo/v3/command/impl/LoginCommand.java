@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 public class LoginCommand implements Command {
-    private AdminService adminService= AdminServiceImpl.getInstance();
+    private final AdminService adminService= AdminServiceImpl.getInstance();
     //private final Logger logger = LoggerFactory.getLogger(LoginCommand.class);
     private final ClientService clientService = ClientServiceImpl.getInstance();
 
